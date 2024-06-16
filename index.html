@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahariar Mahfuz WEB</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add a link to a font awesome CDN to use icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Paste your menu CSS here */
         /* Basic reset and body styles */
@@ -50,7 +52,7 @@
 
         .menu ul li {
             position: relative; /* Ensure relative positioning for divider */
-            margin: 20px 0; /* Add margin between items */
+            margin: 18px 0; /* Add margin between items */
         }
 
         .menu ul li a {
@@ -74,7 +76,7 @@
             bottom: -10px; /* Adjust position of the divider from bottom */
             left: 50%; /* Center align divider horizontally */
             transform: translateX(-50%);
-            height: 2px; /* Height of the divider */
+            height: 1px; /* Height of the divider */
             width: calc(100% - 40px); /* Width of the divider */
             background-color: rgba(255, 215, 0, 0.5); /* Color of the divider */
         }
@@ -95,8 +97,8 @@
             transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
-        .menu-btn:hover {
-            background-color: #222; /* Darker background on hover */
+        .menu-btn: {
+            background-color: #000; /* Darker background on hover */
             box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.5); /* Reduced intensity glowing effect */
             transform: scale(1.02); /* Slightly scale up on hover */
         }
@@ -225,7 +227,7 @@
             pointer-events: none;
         }
 
-        @media (min-width: 600px) {
+                @media (min-width: 600px) {
             .glass-container {
                 width: 80%;
             }
@@ -277,8 +279,8 @@
     </style>
 </head>
 <body>
-    <!-- Menu Button -->
-    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    <!-- Add an icon to the menu button -->
+    <button class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     
     <!-- Menu -->
     <div class="menu">
@@ -287,8 +289,14 @@
             <li><a href="https://m.me/gamerboymahfuz">Contact</a></li>
             <li><a href="https://t.me/Itachi_Uchiha_64">Telegram</a></li>
             <li><a href="#personal">thanks for visiting my site</a></li>
+            <!-- Add a search option to the menu -->
+            
+            <!-- Your existing menu items -->
         </ul>
     </div>
+
+    <!-- Your existing HTML content -->
+    
 
     <!-- Main Content -->
     <div class="glass-container large">
@@ -321,10 +329,9 @@
             <p> <a href="https://ibn-sina-shahariarmahfuzs-projects.vercel.app/" style="color: #DAA520;">Read More</a></p>
         </div>
     </div>
-    <footer>© 2024 Shahariar Mahfuz. All rights reserved</footer>
 
     <!-- JavaScript for Menu Functionality -->
-    <script>
+<script>
         function toggleMenu() {
             var menu = document.querySelector('.menu');
             menu.classList.toggle('active');
@@ -336,6 +343,34 @@
                 e.preventDefault();
             }
         });
+           function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        // Add a function to search the content of the page
+        function searchContent() {
+            var input, filter, body, txtValue;
+            input = document.getElementById('search');
+            filter = input.value.toUpperCase();
+            body = document.body;
+            txtValue = body.textContent || body.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                body.style.display = "";
+            } else {
+                body.style.display = "none";
+            }
+        }
+
+        // Prevent right-click on profile picture
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.closest('.profile-picture')) {
+                e.preventDefault();
+            }
+        });
     </script>
+    <footer>© 2024 Shahariar Mahfuz. All rights reserved</footer>
 </body>
 </html>
+
+                
